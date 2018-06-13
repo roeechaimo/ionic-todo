@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar>
+        <ion-grid>
+            <ion-row align-items-center>
+                <ion-col col-2>
+                    <ion-buttons left>
+                        <button ion-button icon-only (click)="viewCtrl.dismiss()">
+                            <ion-icon name="arrow-back"></ion-icon>
+                        </button>
+                    </ion-buttons>
+                </ion-col>
+                <ion-col col-8>
+                    <ion-title text-center>Add Description</ion-title>
+                </ion-col>
+                <ion-col col-2></ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <form [formGroup]="formCreateTodoDescription">
+        <ion-title text-center margin>{{todoTitle}}</ion-title>
+        <ion-textarea padding placeholder="Enter a description" formControlName="todoDescription"></ion-textarea>
+        <ion-grid>
+            <ion-row padding justify-content-center>
+                <div class="errorContainer">
+                    <span padding *ngIf="!validateItemDescription()">Must include between 3 and 30 letters</span>
+                </div>
+            </ion-row>
+            <ion-row>
+                <ion-col text-center>
+                    <button ion-button (click)="dismissModal()">Update Description</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
+</ion-content>

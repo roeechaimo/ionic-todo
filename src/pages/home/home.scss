@@ -1,0 +1,20 @@
+page-home {
+
+  .errorContainer {
+    span {
+      color: map-get($colors, danger);
+    }
+  }
+
+  .done {
+    border: 1px solid;
+    border-color: map-get($colors, secondary);
+    border-radius: 5px;
+  }
+
+  ion-input {
+    border-bottom: 1px solid;
+    border-color: map-get($colors, dark);
+  }
+
+}

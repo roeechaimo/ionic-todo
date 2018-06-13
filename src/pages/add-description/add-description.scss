@@ -1,0 +1,15 @@
+page-add-description {
+
+  ion-textarea {
+    border: 1px solid;
+    border-color: map-get($colors, primary);
+    border-radius: 5px;
+  }
+
+  .errorContainer {
+    span {
+      color: map-get($colors, danger);
+    }
+  }
+
+}
