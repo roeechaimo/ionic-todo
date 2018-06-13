@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @IonicPage()
@@ -10,11 +11,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AddDescriptionPage {
 
     public todoTitle: string;
+    public imageData: any;
+
     formCreateTodoDescription: FormGroup;
 
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
                 public viewCtrl: ViewController,
+                private camera: Camera,
                 private formBuilder: FormBuilder) {
         this.formCreateTodoDescription = this.formBuilder.group({
             todoDescription: [ '', [ Validators.minLength(2), Validators.maxLength(30) ] ]
@@ -39,6 +43,26 @@ export class AddDescriptionPage {
         }
         this.viewCtrl.dismiss(this.formCreateTodoDescription.get('todoDescription').value);
     }
+
+    addImage(){
+        console.log('shit');
+        const options: CameraOptions = {
+            quality: 30,
+            destinationType: this.camera.DestinationType.FILE_URI,
+            encodingType: this.camera.EncodingType.JPEG,
+            mediaType: this.camera.MediaType.PICTURE
+        }
+
+        this.camera.getPicture(options).then((imageData) => {
+            // imageData is either a base64 encoded string or a file URI
+            // If it's base64:
+            let base64Image = 'data:image/jpeg;base64,' + imageData;
+            this.imageData = base64Image;
+        }, (err) => {
+            console.log(err);
+        });
+    }
+
 
 
 }
