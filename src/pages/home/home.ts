@@ -35,7 +35,7 @@ export class HomePage {
             return false;
         }
         let title: string = this.formCreateTodo.get('todoTitle').value;
-        let todo: Todo = { 'title': title, 'description': '', 'done': false };
+        let todo: Todo = { 'title': title, 'description': '', 'done': false, 'imageUrl': '' };
         this.todos.push(todo);
         this.formCreateTodo.controls[ 'todoTitle' ].setValue('');
     }
@@ -52,7 +52,7 @@ export class HomePage {
         let descriptionModal = this.modalCtrl.create(AddDescriptionPage, todo, { showBackdrop: true });
         descriptionModal.onDidDismiss(data => {
             if (typeof data !== 'undefined') {
-                todo.description = data;
+                todo = data;
             }
             console.log(todo);
         });

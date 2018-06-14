@@ -21,22 +21,31 @@
 
 <ion-content padding>
     <form [formGroup]="formCreateTodoDescription">
-        <ion-title text-center margin>{{todoTitle}}</ion-title>
-        <ion-textarea padding placeholder="Enter a description" formControlName="todoDescription"></ion-textarea>
         <ion-grid>
+            <ion-row text-center align-items-center>
+                <ion-col col-2>
+                    <ion-img width="40" height="40" [src]="imageData"></ion-img>
+                </ion-col>
+                <ion-col col-8>
+                    <ion-title text-center>{{todoTitle}}</ion-title>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-textarea padding placeholder="Enter a description" formControlName="todoDescription"></ion-textarea>
+            </ion-row>
+
             <ion-row padding justify-content-center>
                 <div class="errorContainer">
                     <span padding *ngIf="!validateItemDescription()">Must include between 3 and 30 letters</span>
                 </div>
             </ion-row>
-            <ion-row>
-                <ion-col text-center>
-                    <button ion-button (click)="addImage()">Add Image</button>
-                </ion-col>
-            </ion-row>
+
             <ion-row>
                 <ion-col text-center>
                     <button ion-button (click)="dismissModal()">Update Description</button>
+                </ion-col>
+                <ion-col text-center>
+                    <button ion-button (click)="addImage()">Add Image</button>
                 </ion-col>
             </ion-row>
         </ion-grid>
