@@ -37,6 +37,9 @@
             <ion-item-options side="left">
                 <button ion-button (click)="createDescription(slidingItem, todo)">{{ 'pages.home.description' | translate }}</button>
             </ion-item-options>
+            <ion-item-options side="right">
+                <button ion-button (click)="clearItem(slidingItem, todo)">{{ 'pages.home.clear' | translate }}</button>
+            </ion-item-options>
         </ion-item-sliding>
     </ion-list>
 

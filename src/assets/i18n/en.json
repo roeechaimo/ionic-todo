@@ -6,6 +6,7 @@
       "add_button": "ADD",
       "slide": "Slide to the right to watch/create/edit description",
       "description": "Description",
+      "clear": "Clear",
       "validation_errors": {
         "must_include-3_to_10": "Must include between 3 and 10 letters"
       }

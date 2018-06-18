@@ -64,5 +64,12 @@ export class HomePage {
         item.close();
     }
 
+    clearItem(item: ItemSliding, todo: Todo) {
+        let todoIndex = this.todos.indexOf(todo);
+        if (todoIndex > -1) {
+            this.todos.splice(todoIndex, 1);
+        }
+    }
+
 
 }
