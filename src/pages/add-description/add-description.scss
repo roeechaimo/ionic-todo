@@ -12,4 +12,8 @@ page-add-description {
     }
   }
 
+  .done {
+    border-color: map-get($colors, secondary);
+  }
+
 }

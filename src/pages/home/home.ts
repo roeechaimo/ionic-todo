@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ItemSliding, ModalController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+
 import { Todo } from '../../models/todo/todo.model';
 import { AddDescriptionPage } from '../add-description/add-description';
 
@@ -24,7 +26,8 @@ export class HomePage {
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
                 private formBuilder: FormBuilder,
-                public modalCtrl: ModalController) {
+                public modalCtrl: ModalController,
+                public translate: TranslateService) {
         this.formCreateTodo = this.formBuilder.group({
             todoTitle: [ '', [ Validators.minLength(2), Validators.maxLength(10) ] ]
         });

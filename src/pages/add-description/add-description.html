@@ -10,7 +10,7 @@
                     </ion-buttons>
                 </ion-col>
                 <ion-col col-8>
-                    <ion-title text-center>Add Description</ion-title>
+                    <ion-title text-center>{{ 'pages.add_description.header' | translate }}</ion-title>
                 </ion-col>
                 <ion-col col-2></ion-col>
             </ion-row>
@@ -31,21 +31,21 @@
                 </ion-col>
             </ion-row>
             <ion-row>
-                <ion-textarea padding placeholder="Enter a description" formControlName="todoDescription"></ion-textarea>
+                <ion-textarea padding placeholder="{{ 'pages.add_description.textarea_placeholder' | translate }}" formControlName="todoDescription" [class.done]="todo?.done"></ion-textarea>
             </ion-row>
 
             <ion-row padding justify-content-center>
                 <div class="errorContainer">
-                    <span padding *ngIf="!validateItemDescription()">Must include between 3 and 30 letters</span>
+                    <span padding *ngIf="!validateItemDescription()">{{ 'pages.add_description.validation_errors.must_include-3_to_30' | translate }}</span>
                 </div>
             </ion-row>
 
             <ion-row>
                 <ion-col text-center>
-                    <button ion-button (click)="dismissModal()">Update Description</button>
+                    <button ion-button (click)="dismissModal()">{{ 'pages.add_description.update_description_button' | translate }}</button>
                 </ion-col>
                 <ion-col text-center>
-                    <button ion-button (click)="addImage()">Add Image</button>
+                    <button ion-button (click)="addImage()">{{ 'pages.add_description.add_image_button' | translate }}</button>
                 </ion-col>
             </ion-row>
         </ion-grid>
