@@ -43,12 +43,12 @@ export class AddDescriptionPage {
                 private toastService: ToastService,
                 private platform: Platform,
                 public translate: TranslateService) {
-        this.formCreateTodoDescription = this.formBuilder.group({
-            todoDescription: [ '', [ Validators.minLength(2), Validators.maxLength(30) ] ]
-        });
     }
 
     ionViewWillEnter() {
+        this.formCreateTodoDescription = this.formBuilder.group({
+            todoDescription: [ '', [ Validators.minLength(2), Validators.maxLength(30) ] ]
+        });
         this.todo = this.navParams.data;
         this.todoTitle = this.navParams.get('title');
         let imageUrl = this.navParams.get('imageUrl');

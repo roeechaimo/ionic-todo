@@ -28,6 +28,9 @@ export class HomePage {
                 private formBuilder: FormBuilder,
                 public modalCtrl: ModalController,
                 public translate: TranslateService) {
+    }
+
+    ionViewWillEnter() {
         this.formCreateTodo = this.formBuilder.group({
             todoTitle: [ '', [ Validators.minLength(2), Validators.maxLength(10) ] ]
         });
