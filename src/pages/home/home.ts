@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ItemSliding, ModalController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
+import { IonicPage, ItemSliding, ModalController, NavController, NavParams } from 'ionic-angular';
 
 import { Todo } from '../../models/todo/todo.model';
 import { AddDescriptionPage } from '../add-description/add-description';
@@ -21,13 +21,14 @@ import { AddDescriptionPage } from '../add-description/add-description';
 export class HomePage {
 
     public todos: Todo[] = [];
-    formCreateTodo: FormGroup;
+    public formCreateTodo: FormGroup;
 
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
                 private formBuilder: FormBuilder,
                 public modalCtrl: ModalController,
                 public translate: TranslateService) {
+        this.ionViewWillEnter();
     }
 
     ionViewWillEnter() {

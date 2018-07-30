@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, Platform } from 'ionic-angular';
-import { Camera, CameraOptions } from '@ionic-native/camera';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 import { TranslateService } from '@ngx-translate/core';
+import { IonicPage, NavController, NavParams, Platform, ViewController } from 'ionic-angular';
 import { Todo } from '../../models/todo/todo.model';
 import { ToastService } from '../../shared/services/toast-service.service';
 
@@ -43,6 +43,7 @@ export class AddDescriptionPage {
                 private toastService: ToastService,
                 private platform: Platform,
                 public translate: TranslateService) {
+        this.ionViewWillEnter();
     }
 
     ionViewWillEnter() {
